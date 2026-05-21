@@ -5,9 +5,29 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>puppy-pocket</title>
+    <link href="/src/style.css" rel="stylesheet">
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="flex flex-col h-screen">
+  <header class="bg-cyan-200 text-white italic text-5xl text-center">
+    Puppy Pocket
+  </header>
+
+  <main class="flex flex-1">
+    <div class="flex-2 bg-blue-300">
+      <button id="clicker">
+        <p id="scoreDisplay">PawPrints</p>
+        <img src="src/assets/cute-cartoon-animal-dog-holding-a-bone-transparent-background-chibi-style-happy-environment-for-kids-free-png.png">
+      </button>
+    </div>
+    <div class="flex-1 bg-blue-400">
+      Dog Breeds
+    </div>
+    <div class="flex-1 bg-cyan-100">
+      For Hire
+    </div>
+  </main>
+
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
