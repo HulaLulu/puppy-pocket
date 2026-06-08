@@ -17,19 +17,19 @@ let scoreDisplay = document.getElementById("scoreDisplay")
 
 const purchaseSound = new Howl({
   src: [LevelUpSrc],
-  volume: 0.3
+  volume: 0.8
 })
 
 const soundEffectOne = new Howl({
   src: [soundEffectSrc],
-  volume: 0.3
+  volume: 0.9
 })
 
 const backgroundMusic = new Howl({
   src: [backgroundMusicSrc],
   autoplay: true,
   loop: true,
-  volume: 0.3
+  volume: 0.7
 })
 
 const formatter = new Intl.NumberFormat('en-US', {
