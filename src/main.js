@@ -17,12 +17,12 @@ let scoreDisplay = document.getElementById("scoreDisplay")
 
 const purchaseSound = new Howl({
   src: [LevelUpSrc],
-  volume: 0.8
+  volume: 1.0
 })
 
 const soundEffectOne = new Howl({
   src: [soundEffectSrc],
-  volume: 0.9
+  volume: 1.0
 })
 
 const backgroundMusic = new Howl({
