@@ -15,6 +15,8 @@ let scoreDisplay = document.getElementById("scoreDisplay")
 
  import LevelUpSrc from './assets/purchase.mp3'
 
+
+
 const purchaseSound = new Howl({
   src: [LevelUpSrc],
   volume: 1.0
@@ -29,8 +31,9 @@ const backgroundMusic = new Howl({
   src: [backgroundMusicSrc],
   autoplay: true,
   loop: true,
-  volume: 0.7
+  volume: 0.6
 })
+
 
 const formatter = new Intl.NumberFormat('en-US', {
   maximumFractionDigits: 2,
@@ -41,12 +44,18 @@ const formatter = new Intl.NumberFormat('en-US', {
 function updateScore (amount) {
   score += amount
   scoreDisplay.innerText = score.toFixed(0) + '   PawPrints'
+
+  if (score >= 100) {
+     purchaseSound.play();
+    } else {
+    alert 
+  }
 }
 
 clicker.addEventListener("click", function() {
   let clickAmt = 1 + (evas ** 1.05)
-
   updateScore(clickAmt)
+  soundEffectOne.play();
 })
 
 let upgradeOne = document.getElementById("upgradeOne")
@@ -55,17 +64,19 @@ let evas = 0
 
 upgradeOne.addEventListener("click", function() {
   if (score >= 100) {
+    purchaseSound.play();
     updateScore(-100)
     evas++
     upgradeOneCount.innerText = evas + '   evas'
   } else {
     alert('Not Enough PawPrints!')
   }
+})
+
 
 let upgradeTwo = document.getElementById("upgradeTwo")
 let upgradeTwoCount = document.getElementById("upgradeTwoCount")
 let georges = 0
-})
 
 upgradeTwo.addEventListener("click", function() {
   if (score >= 2500) {
@@ -79,12 +90,22 @@ upgradeTwo.addEventListener("click", function() {
 })
 
 
+let upgradeThree = document.getElementById("upgradeThree")
+let upgradeThreeCount = document.getElementById("upgradeThreeCount")
+let Jonas = 0
 
-function gameLoop() {
-  let clickAmt = (evas ** 1.05)
+upgradeThree.addEventListener("click", function() {
+  if (score >= 6000) {
+    updateScore(-6000)
+    Jonas++
+    upgradeThreeCount.innerText = Jonas + '   Jonas'
+  } else {
+    alert('Not Enough PawPrints!')
+  }
 
-    updateScore(clickAmt)
-}
+})
+
+
 
 setInterval(gameLoop, 1000)
 
